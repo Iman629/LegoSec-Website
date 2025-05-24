@@ -1,39 +1,103 @@
-/* Global Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+
+:root {
+  /* Dark mode colors (existing) */
+  --maincolor: #170007;
+  --sidecolor:#170007;
+  --headercolor: #28000D;
+  --textcolor: white;
+  --boxcolor:#31262A; 
+  --formbox:#F3CED6;
+  --formtext:#170007;
+  --tableBorder:#F3CED6;
+  }
+
+.mode{
+  height: auto;
+  border-radius:50%;
+  width: 50px;
+  padding: 10px;
+}
+
+.mode:hover{
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.light-mode {
+  
+  --maincolor: #F3CED6;
+  --headercolor: #8A3F53;
+  --textcolor: #471822;
+  --boxcolor: #8A3F53;
+  --formbox:#8A3F53;
+  --formtext:#F3CED6;
+  --tableBorder:#8A3F53;
+
+}
+
+
 body {
-  margin: 0 ;
-  font-family: Arial, sans-serif;
-  background-color: #170007;
-  color: white;
+  
+  font-family: Montserrat;
+  font-size: 18px;
+  background-color:var(--maincolor);
+  color: var(--textcolor);
+  overflow-x: hidden; 
+  word-break: keep-all;
+  
+}
+
+.Legosec {
+  font-family: Squada One;
+  font-weight: bolder;
 }
 
 /* Header with Logo and Search Bar */
 .header {
-  background: rgba(255, 255, 255, 0.1);
+  background:var(--headercolor);
   display: flex;
   justify-content: space-between; /* Logo on left, search bar on right */
   align-items: center;
+  justify-content: center;
   backdrop-filter: blur(10px);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
+  height:70px;
 }
+
+.normalFont{
+  font-weight: normal;
+
+}
+
+.listStyle{
+  list-style: none;
+}
+
 
 .logo {
-  width: 200px; /* Adjust as needed */
+  width:150px; 
   height: auto;
+  padding:20px;
 }
 
-/* Search Bar on Top Right */
+
 .search-bar {
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 25px;
+  background:var(--maincolor);
+  border-radius: 30px;
   padding: 5px 10px;
-  max-width: 400px; /* Adjust as needed */
+  max-width: 700px; /* Adjust as needed */
   width: 100%;
+  height:30px;
+  margin:0 auto;
+  
 }
 
 .search-bar input {
@@ -41,24 +105,52 @@ body {
   padding: 10px;
   border: none;
   background: transparent;
-  color: white;
+  color: var(--textcolor);
   font-size: 16px;
   outline: none;
 }
 
 
-
-.page-container {
-  padding-top: 80px; /* Adjust based on the height of your fixed header */
-  height: calc(100vh - 80px); /* Subtract the header height from the viewport height */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+.search-results li:hover {
+  background-color: #f0f0f0;
 }
 
-/* Links and Buttons */
+
+.mode{
+  height: auto;
+  margin-right: 5px;
+  background-color: var(--headercolor);
+  color: white;
+}
+
+
+
+.page-container {
+  margin-top: 80px; /* Must match your header height exactly */
+  margin-left: 300px; /* Keep your sidebar width */
+  /* width: calc(100% - 300px); */
+  padding: 20px;
+  position: relative;
+  min-height: calc(100vh - 80px); /* Full viewport minus header */
+  box-sizing: border-box; /* Includes padding in width calculations */
+}
+
+.page{
+  padding-left: 130px;
+  padding-right: 130px;
+  padding-bottom: 40px;
+}
+
+
+ p, h1, h2, h3, h4 {
+  max-width: 100%;            
+}
+
+li{
+  font-weight: bold;
+}
+
+
 a {
   color: #007BFF;
   text-decoration: none;
@@ -70,39 +162,216 @@ a:hover {
 
 
 
-textarea {
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
+.home{
+  text-align: center;
+  margin-left: 135px; 
+  width: calc(100% - 250px);
 }
 
-/* Navigation Menu */
-.nav-menu {
-  margin-left: 20px; /* Add spacing between logo and menu */
+.home-item {
+  display: inline-block; 
+  width: 300px;    
+  margin: 20px;              
+  padding: 20px;            
+  background-color: var(--boxcolor); 
+  color:white;
+  border-radius: 15px;       
+  max-height: 80px;          
+  box-sizing: border-box;     
+  vertical-align: top;     
+  font-weight: bold;
+  font-size: 20px;
+  
 }
 
-.nav-menu ul {
-  list-style: none; /* Remove bullet points */
-  padding: 0;
-  margin: 0;
+
+
+.benefits-grid {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-left: 100px;
+  /* margin-left: 275px; */
+}
+
+.benefit-pair {
   display: flex;
-  gap: 20px; /* Add spacing between menu items */
+  gap: 135px;
+  margin-bottom: 20px;
 }
 
-.nav-menu ul li {
-  display: inline-block;
+
+.side-menu {
+  position: fixed;       
+  left: 0;
+  top: 0;
+  bottom: 0;
+  padding: 20px;
+  width: 320px;        
+  height: 100vh;        
+  z-index: 900;         
+  overflow-y: scroll; 
+  
+  box-sizing: border-box;   
+  background: var(--maincolor);  
 }
 
-.nav-menu ul li a {
-  color: white;
+.side-menu::-webkit-scrollbar{
+  width: 5px;
+  background-color:#28000D;
+  
+}
+.side-menu::-webkit-scrollbar-thumb{
+  background:#4b081d;
+  cursor: pointer;
+}
+
+/* Menu items styling */
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 90px 0 0 0; /* Space for header */
+  font-weight: bold;
+  
+}
+
+.side-menu li {
+  margin-bottom: 15px;
+  margin-top: 10px;
+  
+}
+
+.side-menu a {
+  color: var(--textcolor);
   text-decoration: none;
   font-size: 16px;
-  transition: color 0.3s ease;
+  display: block;
+  padding: 8px 21px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
 }
 
-.nav-menu ul li a:hover {
-  color: #007BFF; /* Change color on hover */
+.side-menu a:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
+
+
+.collapsible {
+  background-color: var(--boxcolor);
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  text-align: left;
+  font-size: 18px;
+  border-radius: 15px;
+  height:80px;
+  font-weight: bold;
+  margin-bottom:20px;
+  width: 800px;
+}
+
+
+
+.active, .collapsible:hover {
+  background-color:var(--boxcolor);
+}
+
+.collapsible:after {
+  content: '\2B9F';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2B9D";
+}
+
+.content {
+  padding-left: 10px;
+  overflow: hidden;
+  background-color: var(--boxcolor);
+  color: white;
+  margin-bottom:20px;
+  border-radius: 15px;
+  font-size: 20px;
+  width: 790px;
+}
+
+table , td , tr , th{
+  border:3px solid var(--tableBorder);
+}
+
+form{
+
+  width: 600px;
+  background-color: var(--formbox);
+  color:var(--formtext);
+  align-self: center;
+  padding: 15px;
+  border-radius: 30px;
+  justify-items: center;
+  height: 550px;
+  margin-left: 135px;
+  
+}
+
+
+form > h1{
+  text-align: center;
+}
+
+form > input , textarea{
+  background-color: var(--formbox);
+  color: var(--formtext);
+  height:25px;
+  width:500px;
+  align-content: center;
+  border-width: 2px;
+  border-style: hidden hidden solid hidden;
+  border-color: var(--formtext) ; 
+}
+
+form > input::placeholder,
+form >textarea::placeholder
+{
+  color: var(--formtext);
+
+}
+
+form > textarea{
+  height: 100px;
+  max-width: 500px;
+  
+}
+
+form > button{
+  
+  margin-top: 10px;
+  width: 500px;
+  border-radius: 30px;
+  background-color: var(--maincolor);
+  color: var(--textcolor);
+}
+
+
+
+@media (max-width: 400px) {
+  .side-menu, .page-container, .home { 
+    width: 100% !important; 
+    margin-left: 0 !important;
+  }
+  .header { flex-wrap: wrap; }
+  .home-item  {
+    width: 100%;
+    display: block;
+  }
+    .benefit-pair {
+    flex-direction: column;
+  }
+}
+
+
+

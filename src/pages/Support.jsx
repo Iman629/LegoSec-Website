@@ -3,9 +3,10 @@ import '../App.css'; // Import the shared CSS file
 
 const Support = () => {
     return (
-        <div className="page-container">
+        <div className='page'>
             
-            <section >
+        <div className="page-container">
+            <h3>Help</h3>
                 <h1>Support</h1>
                 <h2>Contact Us</h2>
                 <p>If you need assistance, feel free to reach out to us:</p>
@@ -19,7 +20,9 @@ const Support = () => {
                     <li><a href="/documentation">Documentation</a></li>
                     <li><a href="/faq">FAQ</a></li>
                 </ul>
-            </section>
+            
+        </div>
+
         </div>
     );
 };
